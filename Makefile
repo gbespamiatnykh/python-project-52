@@ -11,4 +11,10 @@ render-start:
 	gunicorn task_manager.wsgi
 
 run:
-	uv run manage.py runserver
+	uv run python manage.py runserver
+
+collectstatic:
+	uv run python manage.py collectstatic --no-input
+
+migrate:
+	uv run python manage.py migrate
