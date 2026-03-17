@@ -31,18 +31,22 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = ["webserver", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "webserver",
+    "127.0.0.1",
+    "python-project-52-3y3c.onrender.com",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
     "task_manager",
 ]
 
