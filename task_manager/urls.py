@@ -17,8 +17,8 @@ Including another URLconf
 
 from django.urls import path
 
-from task_manager import views
+from task_manager.views import IndexView
 
 urlpatterns = [
-    path("", views.index),
+    path("", IndexView.as_view(), name="index"),
 ]
