@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-17 15:17+0700\n"
+"POT-Creation-Date: 2026-03-25 05:47+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,20 +20,144 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: task_manager/settings.py:136
+msgid "English"
+msgstr ""
+
+#: task_manager/settings.py:137
+msgid "Russian"
+msgstr ""
+
+#: task_manager/templates/base.html:17 task_manager/templates/index.html:7
 msgid "Task manager"
 msgstr "Менеджер задач"
 
+#: task_manager/templates/base.html:21 task_manager/templates/users/list.html:4
 msgid "Users"
 msgstr "Пользователи"
 
+#: task_manager/templates/base.html:25
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/base.html:28
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/templates/base.html:31
+msgid "Tasks"
+msgstr "Задачи"
+
+#: task_manager/templates/base.html:36
+msgid "Logout"
+msgstr "Выход"
+
+#: task_manager/templates/base.html:41
 msgid "Login"
 msgstr "Вход"
 
+#: task_manager/templates/base.html:44
+#: task_manager/templates/users/create.html:5
 msgid "Registration"
 msgstr "Регистрация"
 
+#: task_manager/templates/index.html:8
 msgid "Create and track your tasks"
 msgstr "Создавай и отслеживай свои задачи"
 
+#: task_manager/templates/index.html:9
 msgid "Learn more"
 msgstr "Узнать больше"
+
+#: task_manager/templates/users/create.html:10
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: task_manager/templates/users/delete.html:5
+msgid "Delete user"
+msgstr "Удаление пользователя"
+
+#: task_manager/templates/users/delete.html:9
+#, python-format
+msgid "Are you sure you want to delete %(username)s?"
+msgstr "Вы уверены, что хотите удалить %(username)s?"
+
+#: task_manager/templates/users/delete.html:11
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/templates/users/list.html:11 task_manager/users/forms.py:15
+#: task_manager/users/forms.py:23 task_manager/users/forms.py:50
+#: task_manager/users/forms.py:56
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/users/list.html:12
+msgid "Full name"
+msgstr "Полное имя"
+
+#: task_manager/templates/users/list.html:13
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: task_manager/templates/users/list.html:24
+msgid "Edit"
+msgstr "Изменить"
+
+#: task_manager/templates/users/list.html:24
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/templates/users/login.html:5
+#: task_manager/templates/users/login.html:10
+msgid "Sign in"
+msgstr "Вход"
+
+#: task_manager/templates/users/update.html:5
+#: task_manager/templates/users/update.html:10
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/users/forms.py:16 task_manager/users/forms.py:26
+msgid "First name"
+msgstr "Имя"
+
+#: task_manager/users/forms.py:17 task_manager/users/forms.py:29
+msgid "Last name"
+msgstr "Фамилия"
+
+#: task_manager/users/forms.py:32 task_manager/users/forms.py:59
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/users/forms.py:37
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: task_manager/users/forms.py:41
+msgid "Passwords must have at least 3 characters"
+msgstr "Ваш пароль должен содержать как минимум 3 символа"
+
+#: task_manager/users/views.py:30
+msgid "User created successfully"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: task_manager/users/views.py:36
+msgid "Logged in successfully"
+msgstr "Вы залогинены"
+
+#: task_manager/users/views.py:40
+msgid "Logged out successfully"
+msgstr "Вы разлогинены"
+
+#: task_manager/users/views.py:53
+msgid "User updated successfully"
+msgstr "Пользователь успешно изменен"
+
+#: task_manager/users/views.py:59 task_manager/users/views.py:78
+msgid "You do not have permission to change"
+msgstr "У вас нет прав для изменения"
+
+#: task_manager/users/views.py:72
+msgid "User deleted successfully"
+msgstr "Пользователь успешно удален"

@@ -14,23 +14,42 @@
 </head>
 <body class="min-vh-100 d-flex flex-column">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark px-3">
-    <a class="navbar-brand" href="{% url "index" %}">{% trans "Task manager" %}</a>
+    <a class="navbar-brand" href="{% url 'index' %}">{% trans "Task manager" %}</a>
     <div id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="#">{% trans "Users" %}</a>
+          <a class="nav-link " href="{% url 'user_list' %}">{% trans "Users" %}</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " href="#">{% trans "Statuses" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">{% trans "Login" %}</a>
+          <a class="nav-link " href="#">{% trans "Labels" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">{% trans "Registration" %}</a>
+          <a class="nav-link " href="#">{% trans "Tasks" %}</a>
         </li>
+        <li class="nav-item">
+          <form method="post" action="{% url 'logout' %}" class="d-inline">
+          {% csrf_token %}
+          {% bootstrap_button button_type="submit" content=_("Logout") button_class="nav-link btn btn-link"%}
+          </form>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'login' %}">{% trans "Login" %}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'user_create' %}">{% trans "Registration" %}</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </nav>
   <main class="flex-grow-1">
     <div class="container-lg mt-3">
+      {% bootstrap_messages %}
       <h1>{% block heading %}{% endblock %}</h1>
       {% block content %}{% endblock %}
     </div>
