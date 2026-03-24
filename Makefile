@@ -18,3 +18,6 @@ collectstatic:
 
 migrate:
 	uv run python manage.py migrate
+
+test:
+	uv run manage.py test
