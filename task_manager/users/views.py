@@ -18,7 +18,7 @@ from task_manager.users.forms import (
 User = get_user_model()
 
 
-class UsersListView(ListView):
+class UserListView(ListView):
     model = User
     template_name = "users/list.html"
     context_object_name = "users"
