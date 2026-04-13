@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block heading %}{% trans "Task details" %}{% endblock %}
+{% block content %}
+<div class="card col-12 col-md-10 col-lg-8 mx-auto bg-light ">
+  <div class="card-header  bg-secondary text-white">
+    <h1 display-3 mb-0>{{ task.name }}</h1>
+  </div>
+  <div class="card-body">
+    <p class="lead">{{ task.description }}</p>
+    <hr>
+    <div class="container">
+      <div class="row p-1">
+        <div class="col">{% trans "Author" %}</div>
+        <div class="col">{{ task.author }}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% trans "Executor" %}</div>
+        <div class="col">{{ task.executor }}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% trans "Status" %}</div>
+        <div class="col">{{ task.status }}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% trans "Creation date" %}</div>
+        <div class="col">{{ task.created_at }}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">
+          <a href="{% url 'task_update' pk=task.id %}">{% trans "Edit" %}</a><br><a href="{% url 'task_delete' pk=task.id %}">{% trans "Delete" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
