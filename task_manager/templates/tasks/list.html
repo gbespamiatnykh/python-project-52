@@ -8,6 +8,14 @@
   {% csrf_token %}
   {% bootstrap_button button_type="submit" content=_("Create task") button_class="btn btn-primary"%}
 </form>
+<div class="card mx-auto bg-light ">
+  <div class="card-body">
+    <form method="get">
+      {% bootstrap_form filter.form %}
+      {% bootstrap_button button_type="submit" content=_("Show") button_class="btn btn-primary"%}
+    </form>
+  </div>
+</div>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -22,7 +30,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for task in tasks %}
+      {% for task in filter.qs %}
       <tr>
         <td>{{ task.id }}</td>
         <td><a href="{% url 'task_show' pk=task.id %}">{{ task.name }}</a></td>
