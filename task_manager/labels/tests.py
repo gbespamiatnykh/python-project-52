@@ -8,11 +8,13 @@ User = get_user_model()
 
 
 class LabelTest(TestCase):
+    fixtures = ["labels.json", "users.json"]
+
     def setUp(self):
-        self.user1 = User.objects.create_user(
-            username="test_user", password="testpass1"
-        )
-        self.label1 = Label.objects.create(name="Urgent")
+        self.user1 = User.objects.get(pk=1)
+        self.user1.set_password("testpass1")
+        self.user1.save()
+        self.label1 = Label.objects.get(pk=1)
 
     def test_create_label(self):
         self.client.force_login(self.user1)

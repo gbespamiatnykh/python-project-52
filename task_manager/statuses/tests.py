@@ -8,11 +8,13 @@ User = get_user_model()
 
 
 class StatusTest(TestCase):
+    fixtures = ["statuses.json", "users.json"]
+
     def setUp(self):
-        self.user1 = User.objects.create_user(
-            username="test_user", password="testpass1"
-        )
-        self.status1 = Status.objects.create(name="In Progress")
+        self.user1 = User.objects.get(pk=1)
+        self.user1.set_password("testpass1")
+        self.user1.save()
+        self.status1 = Status.objects.get(pk=1)
 
     def test_create_status(self):
         self.client.force_login(self.user1)
@@ -31,12 +33,12 @@ class StatusTest(TestCase):
         list_url = reverse("status_list")
         self.client.post(
             update_url,
-            {"name": "Closed"},
+            {"name": "Testing"},
         )
         self.status1.refresh_from_db()
-        self.assertEqual(self.status1.name, "Closed")
+        self.assertEqual(self.status1.name, "Testing")
         response = self.client.get(list_url)
-        self.assertContains(response, "Closed")
+        self.assertContains(response, "Testing")
         self.assertNotContains(response, "In Progress")
 
     def test_delete_status(self):
