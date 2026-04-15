@@ -34,6 +34,7 @@ DEBUG = os.getenv("DEBUG", False)
 
 ALLOWED_HOSTS = [
     "webserver",
+    "localhost",
     "127.0.0.1",
     "python-project-52-3y3c.onrender.com",
 ]
@@ -111,17 +112,8 @@ if db_from_env:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
         "OPTIONS": {"min_length": 3},
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
