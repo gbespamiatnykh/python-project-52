@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.users.models import User
 
 
-class UserCreatForm(UserCreationForm):
+class UserCreateForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["first_name", "last_name", "username"]

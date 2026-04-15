@@ -10,7 +10,7 @@ from django.views.generic import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 
 from task_manager.users.forms import (
-    UserCreatForm,
+    UserCreateForm,
     UserLoginForm,
     UserUpdateForm,
 )
@@ -26,7 +26,7 @@ class UserListView(ListView):
 
 class UserCreateView(SuccessMessageMixin, CreateView):
     model = User
-    form_class = UserCreatForm
+    form_class = UserCreateForm
     template_name = "users/create.html"
     success_url = reverse_lazy("login")
     success_message = _("User created successfully")
