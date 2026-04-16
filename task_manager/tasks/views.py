@@ -58,5 +58,5 @@ class TaskDeleteView(
         return self.request.user == task.author
 
     def handle_no_permission(self):
-        messages.error(self.request, _("You do not have permission to change"))
+        messages.error(self.request, _("Only the task author can delete it"))
         return redirect("task_list")

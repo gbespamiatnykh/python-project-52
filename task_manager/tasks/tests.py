@@ -35,7 +35,7 @@ class TaskTest(TestCase):
         self.assertContains(response, "Refactore application structure")
         self.assertContains(response, "Clean up code.")
         self.assertContains(response, "To Do")
-        self.assertContains(response, "Sam83")
+        self.assertContains(response, "Samuel Winchester")
         self.assertContains(response, "Review")
 
     def test_update_task(self):
