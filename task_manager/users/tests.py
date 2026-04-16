@@ -15,9 +15,6 @@ class UserModelTest(TestCase):
         self.user2 = User.objects.get(pk=2)
         self.user2.set_password("testpass2")
         self.user2.save()
-        self.user3 = User.objects.get(pk=3)
-        self.user3.set_password("testpass3")
-        self.user3.save()
 
     def test_create_user(self):
         create_url = reverse("user_create")
@@ -42,12 +39,14 @@ class UserModelTest(TestCase):
         )
         update_url = reverse("user_update", kwargs={"pk": self.user2.pk})
         list_url = reverse("user_list")
-        self.client.post(
+        response = self.client.post(
             update_url,
             {
                 "username": "Sam83",
                 "first_name": "John",
                 "last_name": "Winchester",
+                "password1": "testpass3",
+                "password2": "testpass3",
             },
         )
         self.user2.refresh_from_db()

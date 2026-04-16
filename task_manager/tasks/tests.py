@@ -26,8 +26,8 @@ class TaskTest(TestCase):
                 "description": "Clean up code.",
                 "status": 3,
                 "executor": 2,
-                "labels": [2, 3]
-                },
+                "labels": [2, 3],
+            },
         )
         task = Task.objects.get(name="Refactore application structure")
         show_url = reverse("task_show", kwargs={"pk": task.pk})

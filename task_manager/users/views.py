@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, update_session_auth_hash
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -39,7 +39,11 @@ class UserLoginView(SuccessMessageMixin, LoginView):
 
 
 class UserLogoutView(LogoutView):
-    success_message = _("Logged out successfully")
+    next_page = reverse_lazy("index")
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(request, _("Logged out successfully"))
+        return super().dispatch(request, *args, **kwargs)
 
 
 class UserUpdateView(
@@ -57,6 +61,11 @@ class UserUpdateView(
     def handle_no_permission(self):
         messages.error(self.request, _("You do not have permission to change"))
         return redirect("user_list")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        update_session_auth_hash(self.request, self.object)
+        return response
 
 
 class UserDeleteView(
