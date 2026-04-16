@@ -25,15 +25,15 @@ class TaskDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "task"
 
 
-class TaskCreateView(LoginRequiredMixin, CreateView):
+class TaskCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Task
     form_class = TaskForm
     template_name = "tasks/create.html"
     success_url = reverse_lazy("task_list")
+    success_message = _("Task created successfully")
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        messages.success(self.request, _("Task created successfully"))
         return super().form_valid(form)
 
 

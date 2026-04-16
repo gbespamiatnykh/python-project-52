@@ -21,6 +21,8 @@ class Task(models.Model):
         on_delete=models.PROTECT,
         related_name="created_tasks",
         verbose_name=_("executor"),
+        blank=True,
+        null=True,
     )
     author = models.ForeignKey(
         User,
@@ -29,9 +31,7 @@ class Task(models.Model):
         verbose_name=_("author"),
     )
     labels = models.ManyToManyField(
-        Label,
-        related_name="tasks",
-        verbose_name=_("labels"),
+        Label, related_name="tasks", verbose_name=_("labels"), blank=True
     )
 
     def __str__(self):
