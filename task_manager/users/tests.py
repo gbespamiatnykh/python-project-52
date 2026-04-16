@@ -39,7 +39,7 @@ class UserModelTest(TestCase):
         )
         update_url = reverse("user_update", kwargs={"pk": self.user2.pk})
         list_url = reverse("user_list")
-        response = self.client.post(
+        self.client.post(
             update_url,
             {
                 "username": "Sam83",

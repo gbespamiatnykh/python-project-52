@@ -53,7 +53,6 @@ class TaskTest(TestCase):
             },
         )
         self.task1.refresh_from_db()
-        show_url = reverse("task_show", kwargs={"pk": self.task1.pk})
         self.assertEqual(self.task1.name, "Optimize system perfomance")
         self.assertEqual(self.task1.status.name, "Closed")
         response = self.client.get(show_url)
