@@ -4,10 +4,7 @@
 
 {% block heading %}{% trans "Labels" %}{% endblock %}
 {% block content %}
-<form method="post" action="{% url 'label_create' %}">
-  {% csrf_token %}
-  {% bootstrap_button button_type="submit" content=_("Create label") button_class="btn btn-primary"%}
-</form>
+<a href="{% url 'label_create' %}" class="btn btn-primary mb-3">{% trans "Create label" %}</a>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>

@@ -4,10 +4,7 @@
 
 {% block heading %}{% trans "Statuses" %}{% endblock %}
 {% block content %}
-<form method="post" action="{% url 'status_create' %}">
-  {% csrf_token %}
-  {% bootstrap_button button_type="submit" content=_("Create status") button_class="btn btn-primary"%}
-</form>
+<a href="{% url 'status_create' %}" class="btn btn-primary mb-3">{% trans "Create status" %}</a>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
