@@ -1,12 +1,8 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/gbespamiatnykh/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gbespamiatnykh/python-project-52/actions)
-
-
 # TASK MANAGER
 Task Manager is a web application that helps users manage tasks.
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/gbespamiatnykh/python-project-83/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gbespamiatnykh/python-project-83/actions)
+[![Actions Status](https://github.com/gbespamiatnykh/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gbespamiatnykh/python-project-52/actions)
 
 ### CI and SonarQube status:
 [![Build](https://github.com/gbespamiatnykh/python-project-52/actions/workflows/build.yml/badge.svg)](https://github.com/gbespamiatnykh/python-project-52/actions/workflows/build.yml)
